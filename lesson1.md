@@ -14,6 +14,16 @@ Introductory Questions
   * Be sure to indicate to them that their phones are small computers and mention that computers used to be the size of the room they're sitting in
 * What do they use computers for?
 
+Example
+========
+
+* Have a student come up to the front of the class
+  * Have them take a deck of cards out of the box
+  * Have them hold the cards so that they're upside down
+  * Have them place a card in the center of the deck
+  * Repeat a few times
+  * Tell them to repeat 100 times (and then obviously tell them you're kidding if they start to do it)
+
 Programming Exercise
 ====================
 
@@ -21,10 +31,10 @@ Programming Exercise
 * Make sure they know that they'll have a few minutes to solve the problem and then a chance to revise their solution after an initial try
 
 * Problems
-  * Draw a square (or triangle) on the chalkboard
-  * Shuffle a deck of cards
-  * Put a ballcap on
+  * Draw a square on the whiteboard/chalkboard
   
+* Provide a simple vocabulary of what the instructor (the computer) will understand
+  * e.g. vertical, horizontal, parallel, identical
 * Give 5-10 minutes for students to write down a step-by-step algorithm for how to solve the problem
 * Once they're done, collect solutions and demo them as if you're a computer
 * Time permitting, give students another 5-10 minutes and the same (or another) problem to solve
