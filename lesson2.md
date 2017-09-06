@@ -34,6 +34,9 @@ void draw() {
 * Discuss how graphics are drawn on the screen
   * Colors using rgb or hex values
   * Pixels for each point on the screen
+  
+* Why are colors in rgb?
+  * 
 
 * Demonstrate a simple program that draws a square that follows the mouse
 * Show the code for the program and briefly cover what it does
