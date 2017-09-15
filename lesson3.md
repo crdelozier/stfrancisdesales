@@ -84,3 +84,48 @@ void mouseClicked(){
   * Computers can generate random numbers by using their hardware and examining places in memory that are likely to be random.
   * This is important for protecting things like passwords.
   
+```
+int w = 400;
+int h = 350;
+
+void setup(){
+  size(400,350);
+}
+
+int x = 50;
+int y = 0;
+
+int xdir = 1;
+int ydir = 1;
+
+int speed = 1;
+
+void draw(){
+  background(255);
+  fill(0);
+  rect(x,y,50,50);
+  
+  x = x + (speed * xdir);
+  y = y + (speed * ydir);
+  
+  if(x >= 350){
+    xdir = -1; 
+  }
+  
+  if(x <= 0){
+    xdir = 1; 
+  }
+  
+  if(y >= 300){
+    ydir = -1; 
+  }
+  
+  if(y <= 0){
+    ydir = 1; 
+  }
+}
+
+void mouseClicked(){
+  speed = speed + 1; 
+}
+```
