@@ -142,16 +142,13 @@ int y = 400;
 int xdir = 1;
 int ydir = 1;
 int speed = 1;
-int l = 0;
-int r = 0;
-int p = 400;
+int score = 0;
 
 void draw(){
   background(255);
   fill(0);
   ellipse(x,y,20,20);
-  rect(760,mouseY,20,50);
-  rect(40,p,20,50);
+  rect(40,mouseY,20,50);
   
   moveBall();
   checkCollisions();
@@ -164,13 +161,11 @@ void moveBall(){
 
 void checkCollisions(){
   if(x < 0){
-    r++;
     reset();
   }
   
-  if(x > 800){
-    l++;
-    reset();
+  if(x > 790){
+    xdir = -1;
   }
   
   if(y < 10){
@@ -181,29 +176,21 @@ void checkCollisions(){
     ydir = -1;
   }
   
-  if(x > 20 && x < 60){
-    if(y > p - 20 && y < p + 20){
+  if(x > 30 && x < 70){
+    if(y > mouseY - 25 && y < mouseY + 25){
+      if(xdir == -1){
+        speed++;
+        score++;
+      }
       xdir = 1;
     }
-  }
-  
-  if(x > 740 && x < 780){
-    if(y > mouseY - 20 && y < mouseY + 20){
-      xdir = -1; 
-    }
-  }
-}
-
-void keyPressed(){
-  if(key == 'w'){
-    p = p - 10;
-  }else if(key == 's'){
-    p = p + 10;
   }
 }
 
 void reset(){
-  println(l + " - " + r);
+  println("Score: " + score);
+  speed = 1;
+  score = 0;
   x = 400;
   y = 400;
 }
