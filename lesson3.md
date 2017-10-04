@@ -129,3 +129,82 @@ void mouseClicked(){
   speed = speed + 1; 
 }
 ```
+
+* Next, we work on making a simple pong game.  Students can then modify the pong game to make it harder, or add an AI opponent!
+
+```
+void setup(){
+  size(800,800); 
+}
+
+int x = 400;
+int y = 400;
+int xdir = 1;
+int ydir = 1;
+int speed = 1;
+int l = 0;
+int r = 0;
+int p = 400;
+
+void draw(){
+  background(255);
+  fill(0);
+  ellipse(x,y,20,20);
+  rect(760,mouseY,20,50);
+  rect(40,p,20,50);
+  
+  moveBall();
+  checkCollisions();
+}
+
+void moveBall(){
+  x = x + xdir * speed;
+  y = y + ydir * speed;
+}
+
+void checkCollisions(){
+  if(x < 0){
+    r++;
+    reset();
+  }
+  
+  if(x > 800){
+    l++;
+    reset();
+  }
+  
+  if(y < 10){
+    ydir = 1; 
+  }
+  
+  if(y > 790){
+    ydir = -1;
+  }
+  
+  if(x > 20 && x < 60){
+    if(y > p - 20 && y < p + 20){
+      xdir = 1;
+    }
+  }
+  
+  if(x > 740 && x < 780){
+    if(y > mouseY - 20 && y < mouseY + 20){
+      xdir = -1; 
+    }
+  }
+}
+
+void keyPressed(){
+  if(key == 'w'){
+    p = p - 10;
+  }else if(key == 's'){
+    p = p + 10;
+  }
+}
+
+void reset(){
+  println(l + " - " + r);
+  x = 400;
+  y = 400;
+}
+```
