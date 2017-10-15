@@ -166,59 +166,6 @@ void draw(){
   rectangle, and the height of the rectangle.
 * Try changing each of the inputs to see what happens.
 
-* Now let's use a variable to change the position of each part of the square.
-* Processing has two built-in variables for the position of the mouse called "mouseX" and "mouseY".
-  * We will use these variables to change the position of the square.
-
-```
-void setup(){
-  size(400,400);
-  background(255);
-}
-
-void draw(){
-  rect(mouseX,mouseY,100,100);
-}
-```
-
-* Oops!  We have a bug!  What happened?
-* The draw() function needs to redraw the background each time, or everything we drew the previous round becomes the background.
-
-```
-void setup(){
-  size(400,400);
-}
-
-void draw(){
-  background(255);
-  rect(mouseX,mouseY,100,100);
-}
-```
-
-* What happens if we change the last two inputs to also use the mouseX and mouseY variables?
-
-```
-rect(mouseX,mouseY,mouseX,mouseY);
-```
-
-* We can also draw a square using the "line" function.  The line function takes 4 inputs for the x and y coordinate of the 
-  start of the line and the x and y coordinate for the end of the line.
-* Try to draw a square using the line function.
-
-```
-void setup(){
-  size(400,400);
-}
-
-void draw(){
-  background(255);
-  line(50,50,50,100);
-  line(50,100,100,100);
-  line(100,100,100,50);
-  line(100,50,50,50);
-}
-```
-
 * We can change the colors of things that we draw using the stroke() and fill() functions.
 
 ```
