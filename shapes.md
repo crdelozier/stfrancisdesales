@@ -7,6 +7,58 @@ Intro
 Drawing
 ========
 
+* We can also draw a square using the "line" function.  The line function takes 4 inputs for the x and y coordinate of the 
+  start of the line and the x and y coordinate for the end of the line.
+* Try to draw a square using the line function.
+
+```
+void setup(){
+  size(400,400);
+}
+
+void draw(){
+  background(255);
+  line(50,50,50,100);
+  line(50,100,100,100);
+  line(100,100,100,50);
+  line(100,50,50,50);
+}
+```
+* Mention that by drawing a square using lines we are implementing the "rect" function.
+
+* Next we go back to drawing square using rectangles.  This is a good time to reiterate that
+  comments can be used to save code for later if we might need it.  Have the students comment
+  out the calls to line().
+
+* Now let's use a variable to change the position of each part of the square.
+* Processing has two built-in variables for the position of the mouse called "mouseX" and "mouseY".
+  * We will use these variables to change the position of the square.
+
+```
+void setup(){
+  size(400,400);
+  background(255);
+}
+
+void draw(){
+  rect(mouseX,mouseY,100,100);
+}
+```
+
+* Oops!  We have a bug!  What happened?
+* The draw() function needs to redraw the background each time, or everything we drew the previous round becomes the background.
+
+```
+void setup(){
+  size(400,400);
+}
+
+void draw(){
+  background(255);
+  rect(mouseX,mouseY,100,100);
+}
+```
+
 * We can use another built-in variable to track the previous position of the mouse.
   * pmouseX and pmouseY track the previous position of the mouse (from the last time draw() was called).
 
@@ -127,71 +179,5 @@ void draw(){
 
 void mouseClicked(){
   speed = speed + 1; 
-}
-```
-
-* Next, we work on making a simple pong game.  Students can then modify the pong game to make it harder, or add an AI opponent!
-
-```
-void setup(){
-  size(800,800); 
-}
-
-int x = 400;
-int y = 400;
-int xdir = 1;
-int ydir = 1;
-int speed = 1;
-int score = 0;
-
-void draw(){
-  background(255);
-  fill(0);
-  ellipse(x,y,20,20);
-  rect(40,mouseY,20,50);
-  
-  moveBall();
-  checkCollisions();
-}
-
-void moveBall(){
-  x = x + xdir * speed;
-  y = y + ydir * speed;
-}
-
-void checkCollisions(){
-  if(x < 0){
-    reset();
-  }
-  
-  if(x > 790){
-    xdir = -1;
-  }
-  
-  if(y < 10){
-    ydir = 1; 
-  }
-  
-  if(y > 790){
-    ydir = -1;
-  }
-  
-  if(x > 30 && x < 70){
-    if(y > mouseY - 25 && y < mouseY + 25){
-      if(xdir == -1){
-        speed++;
-        score++;
-      }
-      xdir = 1;
-    }
-  }
-}
-
-void reset(){
-  println("Score: " + score);
-  speed = 1;
-  score = 0;
-  x = 400;
-  y = 400;
 }
 ```
