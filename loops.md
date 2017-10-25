@@ -74,3 +74,44 @@ void setup(){
   }
 }
 ```
+
+* Naturally, once we have loops, we might want to act on more than one variable at a time.
+* Arrays can store more than one thing in a single variable.
+* Without arrays, we would need to explicitly declare all of our variables.
+
+```
+int x1 = 0;
+int x2 = 0;
+int x3 = 0;
+int x4 = 0;
+int x5 = 0;
+int x6 = 0;
+int x7 = 0;
+int x8 = 0;
+int x9 = 0;
+int x10 = 0;
+```
+
+* Instead, we can use arrays to create more than one int at a time, but with the same name.
+
+```
+int[] xs = new int[10];
+```
+
+* Now, we can act on 10 different integers using loops and referring to the same variable name, but with a different "index".
+
+```
+for(int c = 0; c < 10; c++){
+  xs[c] = c * 100;
+}
+```
+
+* Let's draw a moving ellipse at each of these positions.
+
+```
+void draw(){
+  for(int c = 0; c < 10; c++){
+    ellipse(xs[c],mouseY,20,20);
+  }
+}
+```
