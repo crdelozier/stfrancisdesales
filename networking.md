@@ -142,6 +142,12 @@ Next, we'll look at how to get the contents of a website in Processing:
 
 ```
 void setup(){
-
+  String[] lines = loadStrings("http://processing.org/about/index.html");
+  for (int i = 0 ; i < lines.length; i++) {
+    println(lines[i]);
+  }
 }
 ```
+
+This is a nice way to download data from a website.  We'll learn more about the structure of HTML and how to read the code we 
+just downloaded.  This code is abstract compared to what is actually happening.
