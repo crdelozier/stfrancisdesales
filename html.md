@@ -87,3 +87,19 @@ This is some other text.</p>
   This is some other text.</pre>
 ```
 
+Comments
+--------
+
+* You can add comments to your html code with:
+
+```
+<!-- Do not display this at the moment -->
+```
+
+Exercise
+--------
+
+* Create a website about you!  There should be headings for things about you, where you're from, what you've done, things you like.
+* You can include links to websites that you're interested in!
+* You can include pictures of things that you're interested in!
+* Next week, we'll start learning how to format it for more customization!
