@@ -22,7 +22,6 @@ body {
 
 h1 {
     color: navy;
-    margin-left: 20px;
 }
 ```
 
@@ -33,4 +32,15 @@ h1 {
 rgb(255,100,255)
 ```
 
-* Unlike processing, you won't be able to represent the color as a single color.  You'll need to use the rgb notation with numbers between 0 and 255.
+* Unlike processing, you won't be able to represent the color as a single number.  You'll need to use the rgb notation with numbers between 0 and 255.
+
+```
+background-color
+color
+```
+
+* There are 2 attributes for most elements - background-color and color.
+* List of colors: https://www.w3schools.com/colors/colors_names.asp
+
+
+
